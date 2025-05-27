@@ -16,10 +16,10 @@ class Client(models.Model):
 
 class LegalDetails(models.Model):
     client = models.OneToOneField(Client, on_delete=models.CASCADE)
-    inn = models.CharField(max_length=12, unique=True)
-    kpp = models.CharField(max_length=9)
-    ogrn = models.CharField(max_length=13)
-    address = models.TextField()
+    inn = models.CharField(max_length=12, unique=True, blank=True, null=True)
+    kpp = models.CharField(max_length=9, blank=True, null=True)
+    ogrn = models.CharField(max_length=13, blank=True, null=True)
+    address = models.TextField(blank=True, null=True)
 
     def __str__(self):
         return f"ИНН: {self.inn} | {self.client.name} {self.client.surname}"
@@ -27,9 +27,9 @@ class LegalDetails(models.Model):
 
 class IndividualDetails(models.Model):
     client = models.OneToOneField(Client, on_delete=models.CASCADE)
-    unp = models.CharField(max_length=18, unique=True)
-    passport_number = models.CharField(max_length=20)
-    birth_date = models.DateField()
+    unp = models.CharField(max_length=18, unique=True, blank=True, null=True)
+    passport_number = models.CharField(max_length=20, blank=True, null=True)
+    birth_date = models.DateField(blank=True, null=True)
 
     def __str__(self):
         return f"УНП: {self.unp} | {self.client.name} {self.client.surname}"
