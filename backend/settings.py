@@ -21,6 +21,7 @@ INSTALLED_APPS = [
     'django_filters',
 
     'apps.clients.apps.ClientsConfig',
+    'apps.acquiring.apps.AcquiringConfig'
 ]
 
 REST_FRAMEWORK = {
