@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from apps.acquiring.models import AcquiringContract
+from apps.acquiring.models import AcquiringContract, AcquiringTransactions
 
 
 class ContractReadSerializer(serializers.ModelSerializer):
@@ -12,6 +12,7 @@ class ContractReadSerializer(serializers.ModelSerializer):
         fields = ('id', 'client_name','client_surname', 'contract_num', 'acc_num', 'balance', 'commission',
                   'created_at', 'is_active'
         )
+
 
 class ContractWriteSerializer(serializers.ModelSerializer):
     class Meta:
@@ -33,3 +34,9 @@ class ContractWriteSerializer(serializers.ModelSerializer):
         instance.save()
 
         return instance
+
+
+class TransactionReadSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = AcquiringTransactions
+        fields = '__all__'
