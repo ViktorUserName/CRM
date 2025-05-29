@@ -4,10 +4,11 @@ from django.db import models, transaction
 
 from apps.clients.models.models import Client
 from utils.acc_num_generate import generate_account_number
+from utils.contract_num_generate import generate_contract_number
 
 
 class AcquiringContract(models.Model):
-    contract_num = models.CharField(max_length=20, unique=True)
+    contract_num = models.CharField(max_length=20, unique=True, default=generate_contract_number)
     acc_num = models.CharField(max_length=28, unique=True, default=generate_account_number)
     balance = models.DecimalField(decimal_places=2, max_digits=15, default=0)
     commission = models.DecimalField(decimal_places=2, max_digits=15, default=0)

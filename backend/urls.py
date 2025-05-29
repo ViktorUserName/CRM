@@ -11,6 +11,7 @@ from apps import clients
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('clients/', include('apps.clients.urls')),
+    path('contracts/', include('apps.acquiring.urls')),
     path('auth/sign-in/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     # path('auth/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     # path('silk/', include('silk.urls', namespace='silk')),
