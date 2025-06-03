@@ -1,4 +1,3 @@
-
 from django.urls import path, include
 
 from apps.acquiring.views import ContractViewSet, TransactionViewSet
@@ -10,7 +9,7 @@ from apps.users_app.views import UserRegisterView, UserApiInfo
 
 router = CustomRouter(custom_routes={
     'sign-in': 'sign-in',
-    'users' : 'users'
+    'users': 'users'
 })
 
 
