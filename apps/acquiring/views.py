@@ -26,6 +26,10 @@ class TransactionViewSet(viewsets.ModelViewSet):
     queryset = AcquiringTransactions.objects.all()
     serializer_class = TransactionReadSerializer
 
+    # def get_queryset(self):
+    #     contract_id = self.kwargs['contract_pk']
+    #     return AcquiringTransactions.objects.filter(contract_id=contract_id)
+
     # def get_serializer_class(self):
     #     if self.action == 'create':
     #         return ContractWriteSerializer
