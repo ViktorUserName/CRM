@@ -21,7 +21,8 @@ INSTALLED_APPS = [
     'django_filters',
 
     'apps.clients.apps.ClientsConfig',
-    'apps.acquiring.apps.AcquiringConfig'
+    'apps.acquiring.apps.AcquiringConfig',
+    'apps.users_app.apps.UsersAppConfig'
 ]
 
 REST_FRAMEWORK = {
@@ -106,7 +107,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-# AUTH_USER_MODEL = 'api.User'
+AUTH_USER_MODEL = 'users_app.User'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
