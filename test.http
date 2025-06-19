@@ -1,0 +1,14 @@
+
+
+GET http://127.0.0.1:8001/api/active-user/ HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUwMzczODI1LCJpYXQiOjE3NTAzNzM1MjUsImp0aSI6IjhiZWZjZmQ0NzdlZjQ5ODA4ODkwYWI1OTYzMzk5NzZmIiwidXNlcl9pZCI6MX0.QhEZ8G5d5Qa00tpCfcjf4x955rF_SVrjSPP1oHqqDCA
+
+###
+POST http://127.0.0.1:8001/auth/sign-in/ HTTP/1.1
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "admin"
+}
