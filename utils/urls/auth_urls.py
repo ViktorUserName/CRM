@@ -9,7 +9,7 @@ from utils.router import CustomRouter
 
 
 router = CustomRouter(custom_routes={
-    'users': 'users',
+    # 'users': 'users',
 
     'sign-up': 'sign-up',
     'sign-in': 'sign-in',
@@ -19,9 +19,9 @@ router = CustomRouter(custom_routes={
 
 urlpatterns = [
     path('', include(router.urls)),
-    path(r'users/', UserApiInfo.as_view(), name='users'),
+    # path(r'users/', UserApiInfo.as_view(), name='users'),
 
-    path(r'sign-up', UserRegisterView.as_view(), name='sign-up'),
+    path(r'sign-up/', UserRegisterView.as_view(), name='sign-up'),
     path('sign-in/', TokenObtainPairView.as_view(), name='sign-in'),
     path('refresh/', TokenRefreshView.as_view(), name='refresh'),
 

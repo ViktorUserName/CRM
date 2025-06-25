@@ -1,3 +1,4 @@
+from django.shortcuts import render
 from rest_framework import generics, status
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
@@ -25,6 +26,14 @@ class UserRegisterView(generics.CreateAPIView):
 
         headers = self.get_success_headers(serializer.data)
         return Response(token_data, status=status.HTTP_201_CREATED, headers=headers)
+
+
+class UsersApiView(APIView):
+    def get(self, request):
+        users = User.objects.all()
+        serializer = UserReadSerializer(users, many=True)
+        data = serializer.data
+        return Response(data, status=status.HTTP_200_OK)
 
 
 class UserApiInfo(APIView):
