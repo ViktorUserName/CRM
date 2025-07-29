@@ -23,7 +23,8 @@ INSTALLED_APPS = [
 
     'apps.clients.apps.ClientsConfig',
     'apps.acquiring.apps.AcquiringConfig',
-    'apps.users_app.apps.UsersAppConfig'
+    'apps.users_app.apps.UsersAppConfig',
+    'apps.credit.apps.CreditConfig',
 ]
 
 REST_FRAMEWORK = {
